@@ -1,6 +1,7 @@
 # Ultimate Git Notes: From Beginner to Advanced
 
 ## Table of Contents
+
 - [Setting Up Git](#setting-up-git)
 - [Initializing a Repository](#initializing-a-repository)
 - [Basic Git Workflow](#basic-git-workflow)
@@ -59,13 +60,17 @@
 ## Basic Git Workflow
 
 ### Git Status
+
 Shows the status of files in your working directory and staging area.
+
 ```bash
 git status
 ```
 
 ### Git Add
+
 Adds files to the staging area for commit.
+
 ```bash
 git add <filename>
 git add *.js # Add files with a specific extension
@@ -74,7 +79,9 @@ git add -p  # Stage interactively
 ```
 
 ### Git Commit
+
 Records changes to the repository.
+
 ```bash
 git commit -m "Your commit message"
 git commit -am "Add and commit message" # Add and commit in one command
@@ -89,7 +96,9 @@ git commit -m "Add user authentication feature" -m "- Implement login/logout fun
 ```
 
 ### Git Push
+
 Uploads local repository content to a remote repository.
+
 ```bash
 git push # Push to default remote (origin) and branch
 git push origin main # Push to specific remote and branch
@@ -98,7 +107,9 @@ git push --all # Push all branches
 ```
 
 ### Git Pull
+
 Fetches and integrates changes from a remote repository.
+
 ```bash
 git pull # Pull from default remote (origin) and branch
 git pull origin <branch-name> # Pull from a specific remote and branch
@@ -106,7 +117,9 @@ git pull --rebase # Rebase instead of merge
 ```
 
 ### Git Fetch
+
 Download changes from remote repository without merging:
+
 ```bash
 git fetch --all # Fetch from all remotes
 git fetch origin # Fetch from a specific remote
@@ -119,7 +132,9 @@ git fetch -p # Fetch and prune deleted remote branches
 ## Branching and Merging
 
 ### Git Branch
+
 List, create, or delete branches:
+
 ```bash
 git branch
 git branch <branch-name>  # Create a new branch
@@ -129,14 +144,18 @@ git checkout -b <branch-name>  # Create and switch to a new branch
 ```
 
 ### Git Merge
+
 Integrate changes from another branch:
+
 ```bash
 git checkout main # Switch to the main branch
 git merge <branch-name> # Merge changes from another branch
 ```
 
 ### Git Rebase
+
 Reapplies commits on top of another base.
+
 ```bash
 git rebase -i HEAD~3 # Starting rebase the last 3 commits interactively
 git rebase --continue # Continue the rebase after resolving conflicts
@@ -149,13 +168,17 @@ git rebase --skip # Skip the current commit and continue
 ## Advanced Git Commands
 
 ### Git Reflog
+
 View a log of changes to the HEAD:
+
 ```bash
 git reflog
 ```
 
 ### Git Log
+
 View commit history:
+
 ```bash
 git log
 git log --oneline # Compact log
@@ -165,7 +188,9 @@ git log --since="2 weeks ago" --until="1 day ago" # Show commits in date range
 ```
 
 ### Git Reset
+
 Undo changes:
+
 ```bash
 git reset --soft HEAD~1  # Keep changes staged
 git reset --mixed HEAD~1  # Unstage changes
@@ -176,22 +201,30 @@ git reset --hard HEAD@{1}  # Reset to a previous state from reflog
 ```
 
 ### Git Cherry-pick
+
 Apply specific commits from another branch:
+
 ```bash
 git cherry-pick <commit-hash> # Apply a commit
 ```
 
 ### Undoing Changes
+
 Revert a commit:
+
 ```bash
-git revert <commit-hash> # Create a new commit to undo changes of a specific commit 
+git revert <commit-hash> # Create a new commit to undo changes of a specific commit
 ```
+
 Remove commits:
+
 ```bash
 git reset <commit-hash> # Move HEAD to a previous commit
 git push origin <branch-name> --force # Force push to update remote
-``` 
+```
+
 Update a specific commit **Example:**
+
 ```bash
 $ git reflog
 7a9b2c3 HEAD@{0}: commit: Add payment integration
@@ -213,10 +246,11 @@ $ git commit --amend
 $ git rebase --continue
 Successfully rebased and updated refs/heads/main.
 ```
+
 ---
 
-
 ## Common Branch Types
+
 - `main`: Stable production codebase
 - `dev`: Primary development branch
 - `stage`: Testing environment
@@ -230,6 +264,7 @@ Successfully rebased and updated refs/heads/main.
 ---
 
 ## Commit Message Guidelines
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation changes
@@ -250,9 +285,11 @@ Successfully rebased and updated refs/heads/main.
 ## Troubleshooting
 
 ### Handling Diverged Branches
+
 A diverged branch occurs when branches develop independently after sharing a common commit history.
 
 ### Resolving Merge Conflicts
+
 1. Identify conflicting files
 2. Edit files manually
 3. Stage resolved files
@@ -264,6 +301,7 @@ A diverged branch occurs when branches develop independently after sharing a com
 - Leverage Git hooks for automation
 - Learn and use Git aliases
 - Understand the difference between `git fetch` and `git pull`
+
 ---
 
 This Markdown file serves as a quick reference to mastering Git commands for all levels. Happy coding!
